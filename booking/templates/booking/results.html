@@ -1,0 +1,22 @@
+{% extends "homescreen/base.html" %}
+{% block content %}
+	<div class="content-section">
+
+		<h2>Play now at the below shops</h2>
+		
+	
+		{% for shop in Shops %}
+	        <h1>{{ shop.name }}</h1>
+	        <h3 class="text-muted">{{ shop.username }}</h3>
+	        <p>{{ shop.shopname }}</p>
+	        <p>{{ shop.typesport }}</p>
+	    {% endfor %}
+			
+
+			
+
+	</div>
+
+
+		
+{% endblock content %}

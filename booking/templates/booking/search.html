@@ -1,0 +1,37 @@
+{% extends "homescreen/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+		<div class="content-section">
+			
+			<h3>
+				{{city}}
+			</h3>
+			
+
+			<h2 class="homepage-address-search-greeting text-center text-lg-left mb-7">
+	            Καλώς όρισες {{user.username}} ! βρες γηπεδακι!!;                            
+	        </h2>
+	        <form action="{% url 'results' %}" method="get">
+	            {{ form|crispy}}  
+	        	Choose your city<br>
+				<input name="q" value="{{request.GET.q}}" type="text" placeholder="city...">
+				<br>Choose your area<br>
+				<input name="q1" value="{{request.GET.q1}}" ty
+				pe="text" placeholder="area...">	
+				<br>Choose type of sport<br>
+				<input name="q2" type="text" placeholder="type...">	
+				<br><br>
+				<button class="btn btn-success" type="submit" >search</button>		
+			</form>
+			
+
+			<p></p>
+			<button type="button" class="btn text-center" type="submit">Search</button>
+			
+
+			
+		</div>
+
+
+		
+{% endblock content %}
